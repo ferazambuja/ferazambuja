@@ -1,33 +1,41 @@
-# Fernando Azambuja
+# Fernando Voltolini de Azambuja
 
-Color scientist and imaging engineer working across camera image quality,
-color characterization, HDR/SDR perception, research software, measurement,
-and photographic systems.
+Color scientist and imaging engineer working across camera image quality, color
+characterization, HDR/SDR perception, research software, measurement, and
+photographic systems.
 
-## Portfolio map
+[LinkedIn](https://www.linkedin.com/in/fernando-voltolini-de-azambuja)
+
+## Selected engineering work
 
 ### Camera image quality and modern C++
 
-I developed and verified
-[`cpp-camera-iq-toolkit`](https://github.com/ferazambuja/cpp-camera-iq-toolkit)
-with AI assistance. This public C++20 research toolkit covers:
+Developed and verified
+[`cpp-camera-iq-toolkit`](https://github.com/ferazambuja/cpp-camera-iq-toolkit),
+a public C++20 research toolkit for camera measurement and analysis. The
+implemented workflows include:
 
 - RAW/CFA statistics, black-level handling, and demosaic helpers;
 - chart localization, patch extraction, color-correction matrices, and
   Delta E reporting;
 - camera spectral-sensitivity and color-fidelity analysis;
-- dark-frame noise, OECF/tone response, Stepchart checks, and
-  slanted-edge SFR/MTF;
-- CMake/CTest automation, structured JSON/CSV reports, and private-data
-  guardrails.
+- dark-frame noise, OECF/tone response, Stepchart checks, and slanted-edge
+  SFR/MTF; and
+- CMake/CTest automation with structured JSON and CSV outputs.
 
-The repository contains code, tests, small fixtures, and evidence reports.
-Its [coverage and known-gaps
-report](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/CAMERA_IQ_COVERAGE.md)
-maps the implemented surface without inflating it into production experience.
-Large RAW captures and measured laboratory references remain private. It is a
-research toolkit—not a production ISP, camera driver, factory-calibration
-system, standards-certification suite, or commercial Imatest replacement.
+Featured case:
+[SFR/MTF aperture and field analysis](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/SFR_MTF.md).
+Developed and tested an AI-assisted C++20 slanted-edge SFR/MTF workflow over
+first-party archived Nikon D800/D810 lab captures; processed 414/414 field
+ROIs across 18 aperture runs and retained the D800 non-transfer result rather
+than retuning the D810-specific criterion.
+
+[Toolkit](https://github.com/ferazambuja/cpp-camera-iq-toolkit) ·
+[Coverage map](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/CAMERA_IQ_COVERAGE.md) ·
+[SFR/MTF case](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/SFR_MTF.md)
+
+This is research-scale measurement and analysis work, not shipped ISP or
+production-camera ownership.
 
 ### HDR/SDR psychophysics research platform
 
@@ -36,26 +44,25 @@ authoring, deterministic execution, response and session records, HDR
 presentation state, measurement context, psychometric analysis, and structured
 export.
 
-This private M.S. thesis implementation is an infrastructural contribution.
-Its encoded case studies are evidence specifications, not participant-result
-reports; I do not claim new perceptual findings from them.
+This is a private M.S. thesis implementation. Its case-study configurations
+demonstrate the platform and workflow; they are not presented as participant
+findings.
 
-### Published imaging research
+## Published imaging research
 
+- [Assessing the Ability of Simulated Laboratory Scenes to Predict the Image
+  Quality Performance of HDR Captures (and Rendering) of Exterior Scenes Using
+  Mobile Phone Cameras](https://doi.org/10.2352/ISSN.2470-1173.2017.12.IQSP-251)
 - [Sensitivity analysis applied to ISO recommended camera color calibration
-  methods](https://doi.org/10.2352/ISSN.2470-1173.2017.15.DPMI-072) —
-  camera spectral characterization, chart-based profiling, measurement, and
-  sensitivity analysis.
-- [Assessing simulated laboratory scenes as predictors of mobile HDR
-  image-quality performance](https://doi.org/10.2352/ISSN.2470-1173.2017.12.IQSP-251)
-  — HDR capture and measurement, laboratory/field comparison, and a
-  paired-comparison observer study.
+  methods to determine how much of an advantage, if any, does spectral
+  characterization of the camera offer over the chart-based
+  approach](https://doi.org/10.2352/ISSN.2470-1173.2017.15.DPMI-072)
 
 These were team publications. My contributions included hands-on testing,
-coding, and data analysis; for the mobile-HDR study I also helped instruct
-participants and support study execution.
+coding, and data analysis. For the mobile-HDR study, I also helped instruct
+observers and supported captures, measurements, study execution, and writing.
 
-### Imaging laboratory and photographic systems
+## Imaging laboratory and photographic systems
 
 My practical background connects engineering analysis to capture and output:
 
@@ -64,19 +71,22 @@ My practical background connects engineering analysis to capture and output:
 - digital, film, medium-format, large-format, 360-degree, and video systems;
 - color-managed proofing, photographic printing, paper measurement, and
   profile creation; and
-- management support for an approximately 3,000-item RIT photography equipment
-  inventory spanning cameras, lighting, studios, darkrooms, and print
-  resources.
+- four continuous years, including summers, as an RIT Photographic Equipment
+  Student Manager, supporting a 3,000+ item facility and supervising 35+
+  student employees.
 
-### Current learning direction
+Before RIT, I worked as a Photographic Assistant and Digital Capture Technician
+in a professional advertising studio, supporting a color-managed
+capture-to-proof workflow.
 
-I am deepening fixed-point arithmetic and display-pipeline validation through a
-private, AI-assisted learning track built from public and properly licensed
-sources. This is learning and research-scale implementation—not prior
-production SoC/RTL, silicon, panel, factory, or shipped-product experience.
+## Current technical focus
 
-## How I present evidence
+I am deepening fixed-point arithmetic, display-pipeline validation, modern C++,
+and camera measurement through structured learning and portfolio work. Public
+artifacts are linked here when they are ready to be inspected.
 
-I link public code and publications where available, keep private source data
-private, preserve negative results, and distinguish portfolio/research work
-from employment or production ownership.
+## Engineering approach
+
+I build around traceable sources, repeatable tests, explicit limitations, and
+results that remain useful when a hypothesis or acceptance criterion does not
+transfer.
