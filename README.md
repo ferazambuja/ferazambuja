@@ -16,15 +16,19 @@ a public C++20 toolkit for RAW/CFA analysis, chart extraction, color-correction
 matrices and Delta E, spectral sensitivity, OECF and noise, and slanted-edge
 SFR/MTF.
 
-A featured
-[SFR/MTF case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/SFR_MTF.md)
+The
+[SFR/MTF case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md)
 applies aperture and field analysis to Nikon D800/D810 laboratory captures and
 preserves the camera-specific non-transfer result instead of forcing one
-acceptance criterion onto both systems.
+acceptance criterion onto both systems. Additional studies connect
+monochromator RAW sweeps to spectral color-fidelity analysis and trace a
+ColorChecker-SG capture through patch extraction and held-out CCM validation.
 
 [Toolkit](https://github.com/ferazambuja/cpp-camera-iq-toolkit) ·
-[Coverage map](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/CAMERA_IQ_COVERAGE.md) ·
-[SFR/MTF case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/SFR_MTF.md)
+[Technical documentation](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/README.md) ·
+[SFR/MTF](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md) ·
+[Spectral color fidelity](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-color-fidelity.md) ·
+[ColorChecker/CCM](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/colorchecker-ccm.md)
 
 ### HDR/SDR psychophysics research platform
 
