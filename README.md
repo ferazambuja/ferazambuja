@@ -1,8 +1,9 @@
-# Fernando Voltolini de Azambuja
+# Imaging Engineering & Color Science
 
-Color scientist and imaging engineer working across camera image quality, color
-characterization, HDR/SDR perception, research software, measurement, and
-photographic systems.
+I build camera image-quality, color-characterization, and HDR/SDR research
+tools in C++20 and Swift/Metal, grounded in published imaging research,
+hands-on color measurement, and a professional photography and digital-capture
+foundation.
 
 [LinkedIn](https://www.linkedin.com/in/fernando-voltolini-de-azambuja)
 
