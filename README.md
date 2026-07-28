@@ -8,45 +8,30 @@ photographic systems.
 
 ## Selected engineering work
 
-### Camera image quality and modern C++
+### Camera image quality and C++
 
-Developed and verified
+Built
 [`cpp-camera-iq-toolkit`](https://github.com/ferazambuja/cpp-camera-iq-toolkit),
-a public C++20 research toolkit for camera measurement and analysis. The
-implemented workflows include:
+a public C++20 toolkit for RAW/CFA analysis, chart extraction, color-correction
+matrices and Delta E, spectral sensitivity, OECF and noise, and slanted-edge
+SFR/MTF.
 
-- RAW/CFA statistics, black-level handling, and demosaic helpers;
-- chart localization, patch extraction, color-correction matrices, and
-  Delta E reporting;
-- camera spectral-sensitivity and color-fidelity analysis;
-- dark-frame noise, OECF/tone response, Stepchart checks, and slanted-edge
-  SFR/MTF; and
-- CMake/CTest automation with structured JSON and CSV outputs.
-
-Featured case:
-[SFR/MTF aperture and field analysis](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/SFR_MTF.md).
-Developed and tested an AI-assisted C++20 slanted-edge SFR/MTF workflow over
-first-party archived Nikon D800/D810 lab captures; processed 414/414 field
-ROIs across 18 aperture runs and retained the D800 non-transfer result rather
-than retuning the D810-specific criterion.
+A featured
+[SFR/MTF case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/SFR_MTF.md)
+applies aperture and field analysis to Nikon D800/D810 laboratory captures and
+preserves the camera-specific non-transfer result instead of forcing one
+acceptance criterion onto both systems.
 
 [Toolkit](https://github.com/ferazambuja/cpp-camera-iq-toolkit) ·
 [Coverage map](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/CAMERA_IQ_COVERAGE.md) ·
-[SFR/MTF case](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/SFR_MTF.md)
-
-This is research-scale measurement and analysis work, not shipped ISP or
-production-camera ownership.
+[SFR/MTF case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/reports/SFR_MTF.md)
 
 ### HDR/SDR psychophysics research platform
 
-Built an end-to-end Swift/Metal macOS research application connecting study
-authoring, deterministic execution, response and session records, HDR
-presentation state, measurement context, psychometric analysis, and structured
-export.
-
-This is a private M.S. thesis implementation. Its case-study configurations
-demonstrate the platform and workflow; they are not presented as participant
-findings.
+Built an end-to-end Swift/Metal macOS research application for study authoring,
+controlled execution, response and session records, HDR presentation state,
+measurement context, psychometric analysis, and structured export as part of
+my M.S. thesis.
 
 ## Published imaging research
 
@@ -58,35 +43,20 @@ findings.
   characterization of the camera offer over the chart-based
   approach](https://doi.org/10.2352/ISSN.2470-1173.2017.15.DPMI-072)
 
-These were team publications. My contributions included hands-on testing,
-coding, and data analysis. For the mobile-HDR study, I also helped instruct
-observers and supported captures, measurements, study execution, and writing.
+These were team publications. My contributions included testing, coding, data
+analysis, measurement, and study execution.
 
-## Imaging laboratory and photographic systems
+## Imaging and photographic systems
 
-My practical background connects engineering analysis to capture and output:
+My background includes color measurement, camera and image-quality evaluation,
+color-managed capture and output, and digital, film, studio, and video systems.
+I spent four continuous years, including summers, as an RIT Photographic
+Equipment Student Manager, supporting a 3,000+ item facility and supervising
+35+ student employees. Before RIT, I worked as a Photographic Assistant and
+Digital Capture Technician in a professional advertising studio.
 
-- color-measurement instrumentation and camera/image-quality evaluation;
-- camera preparation, lighting, on-set capture review, and retouching handoff;
-- digital, film, medium-format, large-format, 360-degree, and video systems;
-- color-managed proofing, photographic printing, paper measurement, and
-  profile creation; and
-- four continuous years, including summers, as an RIT Photographic Equipment
-  Student Manager, supporting a 3,000+ item facility and supervising 35+
-  student employees.
+## Current focus
 
-Before RIT, I worked as a Photographic Assistant and Digital Capture Technician
-in a professional advertising studio, supporting a color-managed
-capture-to-proof workflow.
-
-## Current technical focus
-
-I am deepening fixed-point arithmetic, display-pipeline validation, modern C++,
-and camera measurement through structured learning and portfolio work. Public
-artifacts are linked here when they are ready to be inspected.
-
-## Engineering approach
-
-I build around traceable sources, repeatable tests, explicit limitations, and
-results that remain useful when a hypothesis or acceptance criterion does not
-transfer.
+Fixed-point arithmetic, display-pipeline validation, modern C++, and camera
+measurement—supported by traceable sources, repeatable tests, and explicit
+technical limitations.
