@@ -14,20 +14,36 @@ foundation.
 Built
 [`cpp-camera-iq-toolkit`](https://github.com/ferazambuja/cpp-camera-iq-toolkit),
 a public C++20 toolkit for RAW/CFA analysis, chart extraction, color-correction
-matrices and Delta E, spectral sensitivity, OECF and noise, and slanted-edge
-SFR/MTF.
+matrices and Delta E, spectral sensitivity, OECF and noise, slanted-edge
+SFR/MTF, and CFA flat-field response.
 
 The
 [SFR/MTF case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md)
 applies aperture and field analysis to Nikon D800/D810 laboratory captures and
-preserves the camera-specific non-transfer result instead of forcing one
-acceptance criterion onto both systems. Additional studies connect
-monochromator RAW sweeps to spectral color-fidelity analysis and trace a
-ColorChecker-SG capture through patch extraction and held-out CCM validation.
+keeps the capture-system-specific non-transfer result instead of forcing one
+acceptance criterion onto both systems. Its field analysis is bounded by what
+fixed-axis edges can support: near-mirror ROI pairs give strong evidence against
+a centered rotationally symmetric field, stopping short of a formal exclusion,
+and the responsible component—tilt, decentering, or alignment—is left
+unresolved.
+
+The
+[CFA flat-field case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md)
+screens 52 integrating-sphere captures down to the three that survive a
+signal-referred clipping gate, then reports center-normalized green and
+chromatic response. The 19.65% quadrant asymmetry diagnoses departure from a
+centered radial field; independently, missing source- and camera-rotation
+controls keep the result at capture-system attribution rather than lens
+vignetting.
+
+Additional studies connect monochromator RAW sweeps to spectral color-fidelity
+analysis and trace a ColorChecker-SG capture through patch extraction and
+held-out CCM validation.
 
 [Toolkit](https://github.com/ferazambuja/cpp-camera-iq-toolkit) ·
 [Technical documentation](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/README.md) ·
 [SFR/MTF](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md) ·
+[CFA flat-field response](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md) ·
 [Spectral color fidelity](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-color-fidelity.md) ·
 [ColorChecker/CCM](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/colorchecker-ccm.md)
 
