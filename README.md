@@ -19,46 +19,47 @@ SFR/MTF, CFA flat-field response, and spectroradiometer archive ingest.
 
 The
 [SFR/MTF case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md)
-applies aperture and field analysis to Nikon D800/D810 laboratory captures and
-keeps the capture-system-specific non-transfer result instead of forcing one
-acceptance criterion onto both systems. Its field analysis is bounded by what
-fixed-axis edges can support: near-mirror ROI pairs give strong evidence against
-a centered rotationally symmetric field, stopping short of a formal exclusion,
-and the responsible component—tilt, decentering, or alignment—is left
-unresolved.
+processed 299 field ROIs across Nikon D800 and D810 aperture sweeps. The D810
+peaked at f/5.6 and the D800 did not follow, so the two bodies are reported
+under separate acceptance criteria rather than averaged into one trend that
+describes neither. Near-mirror ROI pairs give strong evidence against a centered
+rotationally symmetric field, and the analysis stops there: fixed-axis edges
+cannot separate tilt, decentering, and alignment.
 
 The
 [CFA flat-field case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md)
-screens 52 integrating-sphere captures from a Fujifilm X-T100 and Fujinon XF
-14 mm f/2.8 R down to the three that pass a signal-referred near-ceiling gate,
-then reports center-normalized green and chromatic response. The 19.65% quadrant
-asymmetry diagnoses departure from a centered radial field; independently,
-missing source- and camera-rotation controls keep the result at capture-system
-attribution rather than lens vignetting.
+screened 52 integrating-sphere captures of a Fujifilm X-T100 and Fujinon XF
+14 mm f/2.8 R down to the three with usable headroom, then measured
+center-normalized green and chromatic response. A 19.65% quadrant asymmetry
+rules out a centered radial model; attributing it to the lens would need
+source- and camera-rotation controls the capture set does not contain, so the
+finding stays at capture-system level.
 
-The same CFA-domain, per-position criterion screens ColorChecker correction
-flats before demosaic. On one rejected capture, the worst position (G2) reads
-11.63% near ceiling in the centered gate against 0.50% frame-wide and a 1%
-limit. The centered and full-frame checks expose local headroom loss that a
-pooled frame statistic does not, while the correction normalizer stays the
-full-frame valid-sample mean.
+Where a measurement is evaluated changes which data is usable. Screening for
+clipping per CFA position, before demosaic, rejects a ColorChecker correction
+flat whose worst position sits at 11.63% near ceiling while the whole frame
+reads 0.50% against a 1% limit—a pooled, post-demosaic statistic averages that
+local loss away and admits the frame. The same criterion screens inputs to both
+the flat-field and color-correction paths.
+
+Correlation is not validation. A ColorChecker grid was rejected despite channel
+correlations above 0.999, because its center error reached 16.449 px against a
+5 px gate: the correlations confirmed the correct physical sweep, not the
+correct geometry.
 
 The
 [spectroradiometer ingest case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectroradiometer-ingest.md)
 reads a MATLAB v5 archive through a parser written from the format
-specification, so the analysis runs without MATLAB. Measurement identity comes
-from content hashing rather than from filenames, which number acquisitions
-rather than scenes: 89 canonical measurements, with 45 further paths shown to be
-byte-identical copies and therefore excluded from the counts. Reporting absolute
-level, normalized shape, and chromaticity separately is what locates the
-variation—across the 37 repeated groups the spectral-integral coefficient of
-variation reaches 41.65%, while normalized shape stays within 1.076% and
-chromaticity within 0.002852 Δu′v′, with those maxima falling in different
-groups. Source output, geometry, acquisition settings, and instrument behavior
-are not separable from the retained records, so this is reported as within-group
-observed variation rather than drift or repeatability. The spectra reproduce
-recorded XYZ below 2e-13% under one fitted scale—numerical closure within a
-single record, not an instrument-accuracy test.
+specification, so the analysis runs without MATLAB. Identity comes from content
+hashing rather than from filenames that number acquisitions instead of scenes,
+resolving 89 canonical measurements and 45 byte-identical duplicates. Separating
+absolute level from normalized shape is what located the variation: across 37
+repeated groups the spectral-integral coefficient of variation reaches 41.65%,
+while shape stays within 1.076% and chromaticity within 0.002852 Δu′v′. The
+records cannot separate source output, geometry, and acquisition, so this is
+reported as within-group observed variation rather than drift. Recorded XYZ
+reproduces from the spectra below 2e-13%—closure within a single record, not an
+instrument-accuracy test.
 
 Two further studies carry the same standard. One extracts a Canon 5D2 spectral
 sensitivity function from monochromator RAW sweeps and closes four same-session
