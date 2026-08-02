@@ -31,15 +31,17 @@ judgment:
   composite field; missing source- and camera-rotation controls prevent
   lens-only attribution.
 - Measurement qualification: per-CFA screening of the bright central region
-  measured 11.63% near ceiling and rejected a correction flat that measured
-  only 0.50% frame-wide. A separate ColorChecker localization model was
+  rejected a correction flat at 11.63% near ceiling that a pooled frame-wide
+  statistic reported at only 0.50%. A separate ColorChecker localization model was
   rejected at 16.449 px error against a 5 px criterion even though channel
   correlations exceeded 0.999.
 - [Spectroradiometer ingest](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectroradiometer-ingest.md):
-  implemented the compressed MATLAB Level-5 subset used by an 89-reading
-  archive and resolved 45 byte-identical aliases by content hash. An independent
-  MATLAB R2026a export matched all 89 readings, including exact hashes for 178
-  numeric vectors. Across 37 multi-reading groups, spectral-integral CV was
+  implemented the compressed MATLAB Level-5 subset from the format
+  specification, so the analysis carries no MATLAB dependency, and resolved 45
+  byte-identical aliases by content hash. MATLAB R2026a then served as an
+  independent parser oracle rather than a runtime requirement: its export
+  matched all 89 readings, including exact SHA-256 agreement on all 178 numeric
+  vectors. Across 37 multi-reading groups, spectral-integral CV was
   7.17% median and 41.65% maximum; maximum normalized-shape residual was 1.076%;
   and maximum recorded-XYZ pair separation was 0.002852 Δu′v′. These metrics
   describe different properties and do not identify the cause.
