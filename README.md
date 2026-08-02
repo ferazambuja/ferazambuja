@@ -1,9 +1,9 @@
 # Imaging Engineering & Color Science
 
-I build camera image-quality, color-characterization, and HDR/SDR research
-tools in C++20 and Swift/Metal, grounded in published imaging research,
-hands-on color measurement, and a professional photography and digital-capture
-foundation.
+I develop camera image-quality, color-science, and HDR/SDR research tools in
+C++20 and Swift/Metal. My work combines sensor-level measurement, numerical
+methods, hands-on color measurement, and a professional background in
+photography and digital capture.
 
 [LinkedIn](https://www.linkedin.com/in/fernando-voltolini-de-azambuja)
 
@@ -13,61 +13,43 @@ foundation.
 
 Built
 [`cpp-camera-iq-toolkit`](https://github.com/ferazambuja/cpp-camera-iq-toolkit),
-a public C++20 toolkit for RAW/CFA analysis, chart extraction, color-correction
-matrices and Delta E, spectral sensitivity, OECF and noise, slanted-edge
-SFR/MTF, CFA flat-field response, and spectroradiometer archive ingest.
+a public C++20 toolkit for RAW/CFA analysis, color characterization, spectral
+measurement, tone and noise, slanted-edge SFR/MTF, and spatial-response
+analysis. Selected results demonstrate both measurement design and technical
+judgment:
 
-The
-[SFR/MTF case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md)
-processed 299 field ROIs across Nikon D800 and D810 aperture sweeps. The D810
-peaked at f/5.6 and the D800 did not follow, so the two bodies are reported
-under separate acceptance criteria rather than averaged into one trend that
-describes neither. Near-mirror ROI pairs give strong evidence against a centered
-rotationally symmetric field, and the analysis stops there: fixed-axis edges
-cannot separate tilt, decentering, and alignment.
-
-The
-[CFA flat-field case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md)
-screened 52 integrating-sphere captures of a Fujifilm X-T100 and Fujinon XF
-14 mm f/2.8 R down to the three with usable headroom, then measured
-center-normalized green and chromatic response. A 19.65% quadrant asymmetry
-rules out a centered radial model; attributing it to the lens would need
-source- and camera-rotation controls the capture set does not contain, so the
-finding stays at capture-system level.
-
-Where a measurement is evaluated changes which data is usable. Screening for
-clipping per CFA position, before demosaic, rejects a ColorChecker correction
-flat whose worst position sits at 11.63% near ceiling while the whole frame
-reads 0.50% against a 1% limit—a pooled, post-demosaic statistic averages that
-local loss away and admits the frame. The same criterion screens inputs to both
-the flat-field and color-correction paths.
-
-Correlation is not validation. A ColorChecker grid was rejected despite channel
-correlations above 0.999, because its center error reached 16.449 px against a
-5 px gate: the correlations confirmed the correct physical sweep, not the
-correct geometry.
-
-The
-[spectroradiometer ingest case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectroradiometer-ingest.md)
-reads a MATLAB v5 archive through a parser written from the format
-specification, so the analysis runs without MATLAB. Identity comes from content
-hashing rather than from filenames that number acquisitions instead of scenes,
-resolving 89 canonical measurements and 45 byte-identical duplicates. Separating
-absolute level from normalized shape is what located the variation: across 37
-repeated groups the spectral-integral coefficient of variation reaches 41.65%,
-while shape stays within 1.076% and chromaticity within 0.002852 Δu′v′. The
-records cannot separate source output, geometry, and acquisition, so this is
-reported as within-group observed variation rather than drift. Recorded XYZ
-reproduces from the spectra below 2e-13%—closure within a single record, not an
-instrument-accuracy test.
-
-Two further studies carry the same standard. One extracts a Canon 5D2 spectral
-sensitivity function from monochromator RAW sweeps and closes four same-session
-camera and chart datasets above 0.992 minimum channel correlation, then compares
-five cameras under Luther and ISO 17321-style fidelity metrics. The other traces
-a ColorChecker-SG capture from RAW patch extraction—agreeing with an independent
-reference tool above 0.99999998 correlation at sub-0.4 DN RMSE—through flat-field
-and white-balance correction to held-out CCM validation at 4.134 mean CIEDE2000.
+- [SFR/MTF](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md):
+  analyzed 299 field ROIs across Nikon D800 and D810 aperture sweeps. The D810
+  capture system peaked at f/5.6; the D800 showed a different aperture trend and
+  asymmetric field behavior, so the study retained separate capture-system
+  conclusions. Fixed-axis edges constrain the asymmetry but cannot isolate
+  tilt, decentering, or alignment.
+- [CFA flat-field response](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md):
+  screened 52 integrating-sphere captures and retained the three with usable
+  headroom. A 19.65% quadrant asymmetry exceeded the declared 5% criterion and
+  was inconsistent with a centered radial scalar model for the measured
+  composite field; missing source- and camera-rotation controls prevent
+  lens-only attribution.
+- Measurement qualification: per-CFA screening of the bright central region
+  measured 11.63% near ceiling and rejected a correction flat that measured
+  only 0.50% frame-wide. A separate ColorChecker localization model was
+  rejected at 16.449 px error against a 5 px criterion even though channel
+  correlations exceeded 0.999.
+- [Spectroradiometer ingest](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectroradiometer-ingest.md):
+  implemented the compressed MATLAB Level-5 subset used by an 89-reading
+  archive and resolved 45 byte-identical aliases by content hash. An independent
+  MATLAB R2026a export matched all 89 readings, including exact hashes for 178
+  numeric vectors. Across 37 multi-reading groups, spectral-integral CV was
+  7.17% median and 41.65% maximum; maximum normalized-shape residual was 1.076%;
+  and maximum recorded-XYZ pair separation was 0.002852 Δu′v′. These metrics
+  describe different properties and do not identify the cause.
+- [Spectral and color validation](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-color-fidelity.md):
+  extracted a Canon 5D2 spectral sensitivity from monochromator RAW sweeps and
+  closed four same-session camera/chart datasets above 0.992 minimum channel
+  correlation. The [ColorChecker/CCM path](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/colorchecker-ccm.md)
+  matched an independent extraction above 0.99999998 correlation with sub-0.4
+  DN RMSE and reached 4.134 mean held-out CIEDE2000 after flat-field and
+  white-balance correction.
 
 [Toolkit](https://github.com/ferazambuja/cpp-camera-iq-toolkit) ·
 [Technical documentation](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/README.md) ·
