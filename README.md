@@ -30,18 +30,18 @@ unresolved.
 The
 [CFA flat-field case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md)
 screens 52 integrating-sphere captures from a Fujifilm X-T100 and Fujinon XF
-14 mm f/2.8 R down to the three that survive a signal-referred clipping gate,
+14 mm f/2.8 R down to the three that pass a signal-referred near-ceiling gate,
 then reports center-normalized green and chromatic response. The 19.65% quadrant
 asymmetry diagnoses departure from a centered radial field; independently,
 missing source- and camera-rotation controls keep the result at capture-system
 attribution rather than lens vignetting.
 
-The same clipping criterion governs which flats the ColorChecker workflow will
-correct with. A vignetted flat is brightest at its center, so the center
-saturates first while the frame-wide statistic still looks acceptable — one
-capture reads 2.38% near ceiling there against 0.0996% across the frame. Since
-the center is what sets the correction scale, both regions are tested before a
-flat is accepted.
+The same CFA-domain, per-position criterion screens ColorChecker correction
+flats before demosaic. On one rejected capture, the worst position (G2) reads
+11.63% near ceiling in the centered gate against 0.50% frame-wide and a 1%
+policy; the former pooled, post-demosaic whole-frame guard admitted it. The
+center gate protects local headroom, while the correction normalizer remains
+the full-frame valid-sample mean.
 
 Additional studies connect monochromator RAW sweeps to spectral color-fidelity
 analysis and trace a ColorChecker-SG capture through patch extraction and
