@@ -15,7 +15,7 @@ Built
 [`cpp-camera-iq-toolkit`](https://github.com/ferazambuja/cpp-camera-iq-toolkit),
 a public C++20 toolkit for RAW/CFA analysis, chart extraction, color-correction
 matrices and Delta E, spectral sensitivity, OECF and noise, slanted-edge
-SFR/MTF, and CFA flat-field response.
+SFR/MTF, CFA flat-field response, and spectroradiometer archive ingest.
 
 The
 [SFR/MTF case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md)
@@ -48,9 +48,16 @@ The
 connects a bounded MATLAB v5 reader to an identity ledger and verifies the exact
 bytes parsed for 89 distinct readings and 45 byte-identical aliases. It reports
 absolute spectral level, integral-normalized shape, and recorded-XYZ
-chromaticity separately across 40 measurement groups. A same-record XYZ closure
-check reaches below `2e-13%` residual after one archive-derived scale fit; the
-study treats this as same-record numerical consistency, not instrument accuracy.
+chromaticity separately across 40 measurement groups. Keeping them separate is
+what carries the result: within the 37 repeated groups, absolute level moves far
+more than spectral shape—41.65% maximum coefficient of variation on the spectral
+integral against a 1.076% maximum normalized-shape L2 residual and 0.002852
+maximum pairwise Δu′v′. Source output, geometry, acquisition settings, and
+instrument behavior are not separable from the retained records, so this stays
+at within-group observed variation rather than drift or repeatability. A
+same-record XYZ closure check reaches below `2e-13%` residual after one
+archive-derived scale fit; the study treats this as same-record numerical
+consistency, not instrument accuracy.
 
 Additional studies connect monochromator RAW sweeps to spectral color-fidelity
 analysis and trace a ColorChecker-SG capture through patch extraction and
