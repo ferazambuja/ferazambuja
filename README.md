@@ -39,9 +39,18 @@ attribution rather than lens vignetting.
 The same CFA-domain, per-position criterion screens ColorChecker correction
 flats before demosaic. On one rejected capture, the worst position (G2) reads
 11.63% near ceiling in the centered gate against 0.50% frame-wide and a 1%
-policy; the former pooled, post-demosaic whole-frame guard admitted it. The
-center gate protects local headroom, while the correction normalizer remains
-the full-frame valid-sample mean.
+limit. The centered and full-frame checks expose local headroom loss that a
+pooled frame statistic does not, while the correction normalizer remains the
+full-frame valid-sample mean.
+
+The
+[spectroradiometer ingest case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectroradiometer-ingest.md)
+connects a bounded MATLAB v5 reader to an identity ledger and verifies the exact
+bytes parsed for 89 distinct readings and 45 byte-identical aliases. It reports
+absolute spectral level, integral-normalized shape, and recorded-XYZ
+chromaticity separately across 40 measurement groups. A same-record XYZ closure
+check reaches below `2e-13%` residual after one archive-derived scale fit; the
+study treats this as same-record numerical consistency, not instrument accuracy.
 
 Additional studies connect monochromator RAW sweeps to spectral color-fidelity
 analysis and trace a ColorChecker-SG capture through patch extraction and
@@ -51,6 +60,7 @@ held-out CCM validation.
 [Technical documentation](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/README.md) ·
 [SFR/MTF](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md) ·
 [CFA flat-field response](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md) ·
+[Spectroradiometer ingest](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectroradiometer-ingest.md) ·
 [Spectral color fidelity](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-color-fidelity.md) ·
 [ColorChecker/CCM](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/colorchecker-ccm.md)
 
