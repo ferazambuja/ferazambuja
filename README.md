@@ -40,29 +40,33 @@ The same CFA-domain, per-position criterion screens ColorChecker correction
 flats before demosaic. On one rejected capture, the worst position (G2) reads
 11.63% near ceiling in the centered gate against 0.50% frame-wide and a 1%
 limit. The centered and full-frame checks expose local headroom loss that a
-pooled frame statistic does not, while the correction normalizer remains the
+pooled frame statistic does not, while the correction normalizer stays the
 full-frame valid-sample mean.
 
 The
 [spectroradiometer ingest case study](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectroradiometer-ingest.md)
-connects a bounded MATLAB v5 reader to an identity ledger. The parser reads 89
-canonical measurements, while optional alias verification confirms that 45
-additional paths are byte-identical copies without counting them as new
-measurements. Across the 37 repeated groups, the maximum spectral-integral
-coefficient of variation is 41.65%, the maximum normalized-shape L2 residual is
-1.076%, and the maximum pairwise Δu′v′ derived from recorded XYZ is 0.002852.
-These metrics describe separate aspects of the records and their maxima do not
-necessarily occur in the same group. Source output, geometry, acquisition
-settings, and instrument behavior are not separable from the retained records,
-so the result is described as within-group observed variation rather than drift
-or repeatability. A
-same-record XYZ closure check reaches below `2e-13%` residual after one
-archive-derived scale fit; the study treats this as same-record numerical
-consistency, not instrument accuracy.
+reads a MATLAB v5 archive through a parser written from the format
+specification, so the analysis runs without MATLAB. Measurement identity comes
+from content hashing rather than from filenames, which number acquisitions
+rather than scenes: 89 canonical measurements, with 45 further paths shown to be
+byte-identical copies and therefore excluded from the counts. Reporting absolute
+level, normalized shape, and chromaticity separately is what locates the
+variation—across the 37 repeated groups the spectral-integral coefficient of
+variation reaches 41.65%, while normalized shape stays within 1.076% and
+chromaticity within 0.002852 Δu′v′, with those maxima falling in different
+groups. Source output, geometry, acquisition settings, and instrument behavior
+are not separable from the retained records, so this is reported as within-group
+observed variation rather than drift or repeatability. The spectra reproduce
+recorded XYZ below 2e-13% under one fitted scale—numerical closure within a
+single record, not an instrument-accuracy test.
 
-Additional studies connect monochromator RAW sweeps to spectral color-fidelity
-analysis and trace a ColorChecker-SG capture through patch extraction and
-held-out CCM validation.
+Two further studies carry the same standard. One extracts a Canon 5D2 spectral
+sensitivity function from monochromator RAW sweeps and closes four same-session
+camera and chart datasets above 0.992 minimum channel correlation, then compares
+five cameras under Luther and ISO 17321-style fidelity metrics. The other traces
+a ColorChecker-SG capture from RAW patch extraction—agreeing with an independent
+reference tool above 0.99999998 correlation at sub-0.4 DN RMSE—through flat-field
+and white-balance correction to held-out CCM validation at 4.134 mean CIEDE2000.
 
 [Toolkit](https://github.com/ferazambuja/cpp-camera-iq-toolkit) ·
 [Technical documentation](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/README.md) ·
