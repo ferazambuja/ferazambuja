@@ -38,10 +38,12 @@ attribution rather than lens vignetting.
 
 That gate then found a defect elsewhere in the toolkit. The ColorChecker path
 guarded its flat-field correction frame on a whole-frame clipping fraction
-alone, so it accepted a flat whose normalizing center was 11.63% clipped while
-reading 0.0996% across the frame — the center is the brightest part of a
-vignetted flat and clips first. Both commands now apply the same centered gate
-and accept the same frames, with the published color result reproducing to 0 DN.
+alone, so it accepted a flat measuring 0.0996% across the frame but 2.38% in the
+center — the center is the brightest part of a vignetted flat, clips first, and
+is the region that sets the correction scale. Both commands now apply the same
+centered gate geometry and accept the same frames, though the color path
+measures after demosaic and so reads a diluted fraction; the published color
+result reproduces to 0 DN.
 
 Additional studies connect monochromator RAW sweeps to spectral color-fidelity
 analysis and trace a ColorChecker-SG capture through patch extraction and
