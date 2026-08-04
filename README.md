@@ -1,9 +1,9 @@
 # Imaging Engineering & Color Science
 
-I develop camera image-quality, color-science, and HDR/SDR research tools in
-C++20 and Swift/Metal. My work combines sensor-level measurement, numerical
-methods, hands-on color measurement, and a professional background in
-photography and digital capture.
+I build C++20, Python, and Swift/Metal tools for camera image quality, color
+science, and HDR/SDR research. My work combines sensor-level analysis,
+numerical methods, and hands-on color measurement with professional studio
+experience as a Photographic Assistant and Digital Capture Technician.
 
 [LinkedIn](https://www.linkedin.com/in/fernando-voltolini-de-azambuja)
 
@@ -53,6 +53,15 @@ judgment:
   matched an independent extraction above 0.99999998 correlation with sub-0.4
   DN RMSE and reached 4.134 mean held-out CIEDE2000 after flat-field and
   white-balance correction.
+- [Color-management algorithms](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/gamut-mapping.md):
+  implemented Display-P3-to-sRGB mapping in CIELAB and OkLCh with analytic
+  boundary searches and the CSS Color 4 Local-MINDE method. Holding OkLCh fixed
+  and changing only the algorithm reduced the 125-point grid's mean/maximum
+  CIEDE2000 from 2.947/9.956 to 2.323/7.602. A separate
+  [color-model equation audit](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/color-model-equation-audit.md)
+  quantified bounded CAM16 lightness/background couplings and retained an
+  unfavorable published result; these synthetic studies test algorithms and
+  equations, not observer performance or a measured display.
 
 [Toolkit](https://github.com/ferazambuja/cpp-camera-iq-toolkit) ·
 [Technical documentation](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/README.md) ·
@@ -60,39 +69,50 @@ judgment:
 [CFA flat-field response](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md) ·
 [Spectroradiometer ingest](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectroradiometer-ingest.md) ·
 [Spectral color fidelity](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-color-fidelity.md) ·
-[ColorChecker/CCM](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/colorchecker-ccm.md)
+[ColorChecker/CCM](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/colorchecker-ccm.md) ·
+[Gamut mapping](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/gamut-mapping.md) ·
+[Color-model equation audit](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/color-model-equation-audit.md)
 
 ### HDR/SDR psychophysics research platform
 
 Built an end-to-end Swift/Metal macOS research application for study authoring,
 controlled execution, response and session records, HDR presentation state,
 measurement context, psychometric analysis, and structured export as part of
-my M.S. thesis.
+my M.S. thesis under Dr. Mark D. Fairchild.
 
 ## Published imaging research
 
-- [Assessing the Ability of Simulated Laboratory Scenes to Predict the Image
-  Quality Performance of HDR Captures (and Rendering) of Exterior Scenes Using
-  Mobile Phone Cameras](https://doi.org/10.2352/ISSN.2470-1173.2017.12.IQSP-251)
+Both are coauthored team publications in *Electronic Imaging* (2017), listed in
+their published author order.
+
 - [Sensitivity analysis applied to ISO recommended camera color calibration
   methods to determine how much of an advantage, if any, does spectral
   characterization of the camera offer over the chart-based
-  approach](https://doi.org/10.2352/ISSN.2470-1173.2017.15.DPMI-072)
-
-These were team publications. My contributions included testing, coding, data
-analysis, measurement, and study execution.
+  approach](https://doi.org/10.2352/ISSN.2470-1173.2017.15.DPMI-072) —
+  2017(15), 32–36. Keith Borrino; **Fernando Voltolini de Azambuja**; Nitin
+  Sampat; J. A. Stephen Viggiano.
+  I performed the monochromator-plus-camera and camSPECS spectral-responsivity
+  captures and contributed to the team's coding and data analysis.
+- [Assessing the Ability of Simulated Laboratory Scenes to Predict the Image
+  Quality Performance of HDR Captures (and Rendering) of Exterior Scenes Using
+  Mobile Phone Cameras](https://doi.org/10.2352/ISSN.2470-1173.2017.12.IQSP-251)
+  — 2017(12), 100–104. Amelia Spooner; Ashley Solter; **Fernando Voltolini de
+  Azambuja**; Nitin Sampat; J. A. Stephen Viggiano; Brian Rodricks; Cheng Lu. I
+  helped instruct observers, contributed study code and data analysis, and
+  supported captures, measurements, and writing.
 
 ## Imaging and photographic systems
 
 My background includes color measurement, camera and image-quality evaluation,
 color-managed capture and output, and digital, film, studio, and video systems.
-I spent four continuous years, including summers, as an RIT Photographic
-Equipment Student Manager, supporting a 3,000+ item facility and supervising
-35+ student employees. Before RIT, I worked as a Photographic Assistant and
-Digital Capture Technician in a professional advertising studio.
+In a professional advertising studio, I worked as a Photographic Assistant and
+Digital Capture Technician, supporting digital capture, lighting, and
+color-managed workflows. I also spent four continuous years, including
+summers, as an RIT Photographic Equipment Student Manager, supporting a 3,000+
+item facility and supervising 35+ student employees.
 
 ## Current focus
 
-Fixed-point arithmetic, display-pipeline validation, modern C++, and camera
-measurement—supported by traceable sources, repeatable tests, and explicit
-technical limitations.
+Color-management algorithms, camera measurement, display-pipeline validation,
+fixed-point arithmetic, and modern C++—supported by traceable sources,
+repeatable tests, and explicit technical limitations.
