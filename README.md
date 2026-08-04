@@ -82,8 +82,7 @@ my M.S. thesis under Dr. Mark D. Fairchild.
 
 ## Published imaging research
 
-Both are coauthored team publications in *Electronic Imaging* (2017), listed in
-their published author order.
+Both are coauthored team publications, listed in their published author order.
 
 - [Sensitivity analysis applied to ISO recommended camera color calibration
   methods to determine how much of an advantage, if any, does spectral
