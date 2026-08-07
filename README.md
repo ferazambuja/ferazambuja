@@ -49,7 +49,8 @@ judgment:
 - [Spectral measurement cross-check](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-archive-crosscheck.md):
   compared two eight-reading HID series on an explicit common wavelength grid,
   localized 75.9% of their squared disagreement to 530 and 540 nm, and showed
-  that a fitted wavelength shift explains only part of the difference. A
+  that a fitted reference-axis offset reduces the 35-band objective by 28.7%
+  without identifying a registration error or physical cause. A
   separate reference audit resolved conflicting observer metadata: the CIE
   1964 10° interpretation reproduced recorded Lab at 0.0119 mean ΔE76, versus
   3.909 for the CIE 1931 2° alternative. These checks localize discrepancies;
