@@ -46,6 +46,14 @@ judgment:
   1.076%; and maximum recorded-XYZ pair separation was 0.002852 Δu′v′. These metrics
   describe different properties, their maxima occur in different groups, and
   they do not identify the cause.
+- [Spectral measurement cross-check](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-archive-crosscheck.md):
+  compared two eight-reading HID series on an explicit common wavelength grid,
+  localized 75.9% of their squared disagreement to 530 and 540 nm, and showed
+  that a fitted wavelength shift explains only part of the difference. A
+  separate reference audit resolved conflicting observer metadata: the CIE
+  1964 10° interpretation reproduced recorded Lab at 0.0119 mean ΔE76, versus
+  3.909 for the CIE 1931 2° alternative. These checks localize discrepancies;
+  they do not assign an instrument cause or establish physical accuracy.
 - [Spectral and color validation](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-color-fidelity.md):
   extracted a Canon 5D2 spectral sensitivity from monochromator RAW sweeps and
   closed four same-session camera/chart datasets above 0.992 minimum channel
@@ -68,6 +76,7 @@ judgment:
 [SFR/MTF](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/sfr-mtf-aperture-field.md) ·
 [CFA flat-field response](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md) ·
 [Spectroradiometer ingest](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectroradiometer-ingest.md) ·
+[Spectral measurement cross-check](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-archive-crosscheck.md) ·
 [Spectral color fidelity](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/spectral-color-fidelity.md) ·
 [ColorChecker/CCM](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/colorchecker-ccm.md) ·
 [Gamut mapping](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/gamut-mapping.md) ·
