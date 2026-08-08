@@ -26,10 +26,10 @@ judgment:
   tilt, decentering, or alignment.
 - [CFA flat-field response](https://github.com/ferazambuja/cpp-camera-iq-toolkit/blob/main/docs/case-studies/cfa-flat-field-response.md):
   screened 52 integrating-sphere captures and retained the three with usable
-  headroom. A 19.65% quadrant asymmetry exceeded the declared 5% criterion and
-  was inconsistent with a centered radial scalar model for the measured
-  composite field; missing source- and camera-rotation controls prevent
-  lens-only attribution.
+  headroom. Four equal-radius corner blocks spread by 19.65%, exceeding the
+  declared 5% criterion and excluding a centered radial scalar model for the
+  measured composite field; missing source- and camera-rotation controls
+  prevent lens-only attribution.
 - Measurement qualification: per-CFA screening of the bright central region
   rejected a correction flat because G2 was 11.63% near ceiling there even
   though the same G2 position measured only 0.50% over the full frame. A
