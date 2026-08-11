@@ -5,7 +5,10 @@ HDR/SDR, color measurement, visual perception, and research software. My
 background in advertising photography and digital capture connects hands-on
 camera practice with quantitative imaging work.
 
-## [View my portfolio →](https://ferazambuja.github.io/)
+## [Explore my imaging engineering and color science portfolio →](https://ferazambuja.github.io/)
+
+Camera image-quality studies, color and spectral measurement, HDR research
+software, interactive tools, and selected C++20 implementations.
 
 <p align="center">
   <a href="https://ferazambuja.github.io/">
