@@ -23,4 +23,5 @@ software, interactive tools, and selected C++20 implementations.
 [Imaging and color measurement](https://ferazambuja.github.io/imaging/) ·
 [HDR psychophysics platform](https://ferazambuja.github.io/hdr-platform/) ·
 [CAM16/Hellwig–Fairchild calculator](https://ferazambuja.github.io/imaging/cam16-hellwig-comparator/) ·
+[Color Atlas: Exploring Color Appearance](https://ferazambuja.github.io/imaging/color-atlas/) ·
 [LinkedIn](https://www.linkedin.com/in/fernando-voltolini-de-azambuja)
